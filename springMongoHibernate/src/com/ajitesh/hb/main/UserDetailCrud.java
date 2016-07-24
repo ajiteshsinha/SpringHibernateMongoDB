@@ -13,7 +13,13 @@ import org.hibernate.transform.Transformers;
 import com.ajitesh.datasource.factories.MySqlSessionFactory;
 import com.ajitesh.sh.models.UserCount;
 import com.ajitesh.sh.models.UserMaster;
-
+/**
+ * 
+ * 
+ * 
+ * @author Ajitesh
+ *  This class does all save and list operations for UserDetails
+ */
 public class UserDetailCrud {
 	
 	public static void main(String[] args) {
@@ -41,6 +47,8 @@ public class UserDetailCrud {
 		session.flush();
 		session.close();
 		
+		}catch(Exception e){
+			e.printStackTrace();
 		}finally{
 			sessionFactory.close();
 		}
@@ -62,7 +70,8 @@ public class UserDetailCrud {
 		session.getTransaction().commit();
 		session.flush();
 		session.close();
-		
+		}catch(Exception e){
+			e.printStackTrace();
 		}finally{
 			sessionFactory.close();
 		}
